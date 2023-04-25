@@ -28,11 +28,11 @@ const CreatePost = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ prompt: form.prompt }),
-        })
+        });
 
         const data = await response.json();
 
-        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}`})
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}`});
 
       } catch (error) {
         alert(error);
@@ -42,7 +42,7 @@ const CreatePost = () => {
     } else {
       alert('Please enter a prompt')
     }
-  }
+  };
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
