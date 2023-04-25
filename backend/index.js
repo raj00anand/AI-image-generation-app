@@ -1,5 +1,6 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
+const port = process.env.PORT || 3001;
 import cors from 'cors';
 
 import connectDB from './mongodb/connect.js';
@@ -25,8 +26,7 @@ const startServer = async () => {
 
     try {
         connectDB("mongodb+srv://aranandraj02:RTJutFflCp9pdUeu@cluster0.r4qmmru.mongodb.net/?retryWrites=true&w=majority");
-        app.listen(3000, () =>
-        console.log("server has started at port 3000"));
+        app.listen(port, () => console.log(`app listening on port ${port}!`));
     } catch (error) {
         console.log(error);
     }
